@@ -1,0 +1,24 @@
+.sun-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+    overflow: hidden; /* Prevents any part of the sun from going outside the viewport */
+  }
+  
+  .sun {
+    background: yellow;
+    border-radius: 50%; /* This ensures the element is a circle */
+    animation: slow-spin 20s linear infinite; /* Adjust the duration for a slower or faster spin */
+  }
+  
+  /* Slow spin keyframes */
+  @keyframes slow-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
