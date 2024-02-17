@@ -1,0 +1,69 @@
+.sun-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set to the desired value */
+  }  
+  
+  .sun {
+    background: yellow;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+    position: relative;
+    animation: spin 12s linear infinite;
+  }
+  
+  .ray-box {
+    position: absolute;
+    width: 100%;
+  }
+  
+  .ray {
+    background: yellow;
+    height: 80px;
+    width: 10px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform-origin: bottom center;
+    z-index: -1;
+  }
+  
+  /* Rays around the sun */
+  .ray-box .ray {
+    animation: pulse 12s linear infinite;
+  }
+  
+  /* Keyframes for the sun spinning */
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Keyframes for the rays pulsing */
+  @keyframes pulse {
+    0% { opacity: 0.9; }
+    50% { opacity: 0.4; }
+    100% { opacity: 0.9; }
+  }
+  
+  /* Position each ray properly around the sun */
+  .ray-box .ray-1 { transform: rotate(0deg); }
+  .ray-box .ray-2 { transform: rotate(30deg); }
+  .ray-box .ray-3 { transform: rotate(60deg); }
+  .ray-box .ray-4 { transform: rotate(90deg); }
+  .ray-box .ray-5 { transform: rotate(120deg); }
+  .ray-box .ray-6 { transform: rotate(150deg); }
+  .ray-box .ray-7 { transform: rotate(180deg); }
+  .ray-box .ray-8 { transform: rotate(210deg); }
+  .ray-box .ray-9 { transform: rotate(240deg); }
+  .ray-box .ray-10 { transform: rotate(270deg); }
+  .ray-box .ray-11 { transform: rotate(300deg); }
+  .ray-box .ray-12 { transform: rotate(330deg); }
+  
