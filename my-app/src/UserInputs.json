@@ -1,0 +1,16 @@
+{
+    "users": [
+      {
+        "username": "user1",
+        "preferred_activities": [ "hiking", "yoga", "reading" ]
+      },
+      {
+        "username": "user2",
+        "preferred_activities": [ "cooking", "painting", "running" ]
+      },
+      {
+        "username": "user3",
+        "preferred_activities": [ "swimming", "gardening", "meditation" ]
+      }
+    ]
+  }
