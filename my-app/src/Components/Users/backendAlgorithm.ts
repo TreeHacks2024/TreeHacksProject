@@ -11,15 +11,6 @@ const jsonData: UserData = require('./UserInputs.json'); // Assuming the JSON fi
 
 const users: User[] = jsonData.users;
 
-// users.forEach(user => {
-//     console.log(`Username: ${user.username}`);
-//     console.log("Preferred Activities:");
-//     user.preferred_activities.forEach(activity => {
-//         console.log(activity);
-//     });
-//     console.log("--------------");
-// });
-
 function difference(set1: Set<string>, set2: Set<string>): Set<string> {
     const differenceSet = new Set<string>();
     set1.forEach(value =>{
@@ -44,9 +35,22 @@ function union(set1: Set<string>, set2: Set<string>): Set<string> {
     return result;
 }
 
+function stringSet(set1: Set<string>){
+    var output: string = "";
+    // for (let i = 0; i < set1.size; i++) {
+    //     output += set1[i] + " ";
+    // }
+    set1.forEach(value=>{
+        output += value + "\n";
+    });
+    return output;
+}
+
 export function processUserInputs(userInputs: any): any {
     var result: Set<string> = new Set([]);
-    var inputs: Set<string> = new Set([userInputs.activity1, userInputs.activity2]);
+    var inputsVec: string[] = userInputs.activities.split(", ");
+    var inputs:Set<string> = new Set(inputsVec);
+    console.log(inputs);
     users.forEach(user => {
         var commonTerms: number = 0;
         user.preferred_activities.forEach(activity => {
@@ -63,5 +67,5 @@ export function processUserInputs(userInputs: any): any {
     });
     var newResult: Set<string> = difference(result, inputs);
     console.log(newResult);
-    return "result: " + userInputs.activity1 + userInputs.activity2;
+    return "result: " + stringSet(newResult);
 }
