@@ -1,16 +1,44 @@
 {
-    "users": [
+  "users": [
       {
-        "username": "user1",
-        "preferred_activities": [ "hiking", "yoga", "reading" ]
+          "username": "user1",
+          "preferred_activities": ["hiking", "yoga", "reading", "biking", "photography", "bird watching"]
       },
       {
-        "username": "user2",
-        "preferred_activities": [ "cooking", "painting", "running" ]
+          "username": "user2",
+          "preferred_activities": ["cooking", "painting", "running", "knitting", "dancing"]
       },
       {
-        "username": "user3",
-        "preferred_activities": [ "swimming", "gardening", "meditation" ]
+          "username": "user3",
+          "preferred_activities": ["swimming", "gardening", "meditation", "fishing", "camping"]
+      },
+      {
+          "username": "user4",
+          "preferred_activities": ["rock climbing", "writing", "singing", "volunteering", "traveling"]
+      },
+      {
+          "username": "user5",
+          "preferred_activities": ["surfing", "scuba diving", "watching movies"]
+      },
+      {
+          "username": "user6",
+          "preferred_activities": ["hiking", "running", "bird watching", "watching movies", "traveling"]
+      },
+      {
+          "username": "user7",
+          "preferred_activities": ["yoga", "reading", "knitting", "painting", "dancing"]
+      },
+      {
+          "username": "user8",
+          "preferred_activities": ["swimming", "gardening", "fishing", "camping", "watching movies"]
+      },
+      {
+          "username": "user9",
+          "preferred_activities": ["writing", "singing", "volunteering", "traveling", "rock climbing"]
+      },
+      {
+          "username": "user10",
+          "preferred_activities": ["yoga", "cooking", "hiking", "surfing", "watching movies", "reading"]
       }
-    ]
-  }
+  ]
+}

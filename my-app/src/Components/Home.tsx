@@ -4,6 +4,8 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 const Home = () => {
+
+
     return (
         <>
             <h1 className="mt-5" style={{textAlign: "center"}}>What do you want to try?</h1>
