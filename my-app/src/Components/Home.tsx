@@ -5,8 +5,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
 import LandingPage from './LandingPage/LandingPage';
+import QuestionsPage from './QuestionsPage/QuestionsPage';
+
 
 import { useState, useEffect } from 'react';
+import QuestionStatus from './QuestionStatus/QuestionStatus';
 
 const Home = () => {
     const [openFood, setOpenFood] = useState(false);
@@ -15,6 +18,7 @@ const Home = () => {
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
     const [image_url, setImage_url] = useState("");
+    const [category, setCategory] = useState("");
     
     useEffect(() => {
         const fetchData = async () => {
@@ -45,6 +49,8 @@ const Home = () => {
     return (
         <>
             <LandingPage />
+            <QuestionsPage />
+            <QuestionStatus />
             <h1 className="pt-5" style={{textAlign: "center", color: "#2f5d51"}}>What category do you want to try something new in?</h1>
             <Row style={{textAlign: "center"}}>
                 <Col>
@@ -68,10 +74,7 @@ const Home = () => {
                     : <></>}
                 </Col>
                 <Col>
-                    <Button variant="primary" size="lg" className="mt-5">Recreation</Button>
-                </Col>
-                <Col>
-                    <Button variant="success" style={{backgroundColor: "#2f5d51", color: "white"}} size="lg" className="mt-5">Shopping</Button>
+                    <Button  variant="success" style={{backgroundColor: "#2f5d51", color: "white"}} size="lg" className="mt-5">Recreation</Button>
                 </Col>
             </Row>
             {name ? <>
