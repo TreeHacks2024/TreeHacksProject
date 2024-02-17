@@ -8,8 +8,7 @@ import Container from 'react-bootstrap/Container';
 
 function App() {
   return (
-    <>
-      <NavBar />
+    <div style={{backgroundColor: "#F9EEE5", height: "100vh"}}>
 
       <Container>
         <Home />
@@ -17,7 +16,7 @@ function App() {
       </Container>
       
       <Footer />
-    </>
+    </div>
   );
 }
 
