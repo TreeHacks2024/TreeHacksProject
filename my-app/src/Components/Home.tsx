@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
-import Sun from './Sun/Sun';
+import LandingPage from './LandingPage/LandingPage';
 
 import { useState, useEffect } from 'react';
 
@@ -44,7 +44,7 @@ const Home = () => {
 
     return (
         <>
-           
+            <LandingPage />
             <h1 className="pt-5" style={{textAlign: "center", color: "#2f5d51"}}>What category do you want to try something new in?</h1>
             <Row style={{textAlign: "center"}}>
                 <Col>
