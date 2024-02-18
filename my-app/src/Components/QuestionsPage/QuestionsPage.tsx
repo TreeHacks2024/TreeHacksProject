@@ -136,7 +136,7 @@ const QuestionsPage = () => {
                 </Col>
 
                 <Col>
-                    <Button variant="success" size="lg" className="mt-5" style={{backgroundColor: "#2f5d51", color: "white"}} onClick={() => {setOpenFitness(!openFitness); setQuestionNumber(3)}}>Fitness</Button>
+                    <Button variant="success" size="lg" className="mt-5" style={{backgroundColor: "#2f5d51", color: "white"}} onClick={() => {setOpenFitness(!openFitness); setQuestionNumber(5)}}>Fitness</Button>
                 </Col>
                 </Row>
                 {openFood ? 
