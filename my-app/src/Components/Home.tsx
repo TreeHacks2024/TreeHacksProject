@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
 import LandingPage from './LandingPage/LandingPage';
 import QuestionsPage from './QuestionsPage/QuestionsPage';
-
+import './QuestionStatus/QuestionStatus.css';
 
 import { useState, useEffect } from 'react';
 import QuestionStatus from './QuestionStatus/QuestionStatus';
@@ -19,6 +19,7 @@ const Home = () => {
     const [address, setAddress] = useState("");
     const [image_url, setImage_url] = useState("");
     const [category, setCategory] = useState("");
+    const [page, setPage] = useState(1);
     
     useEffect(() => {
         const fetchData = async () => {
@@ -48,9 +49,13 @@ const Home = () => {
 
     return (
         <>
-            <LandingPage />
-            <QuestionsPage />
-            <QuestionStatus />
+            {page === 1 ?  
+            <LandingPage page={page} setPage={setPage} /> :
+            <></>}
+            {page === 2 ?  
+            <QuestionsPage /> :
+            <></>}
+
             <h1 className="pt-5" style={{textAlign: "center", color: "#2f5d51"}}>What category do you want to try something new in?</h1>
             <Row style={{textAlign: "center"}}>
                 <Col>
