@@ -51,3 +51,9 @@
     font-weight: bold;
     font-size: 1.25em;
 }
+.pink-bar {
+    display: flex;
+    flex-direction: column; /* Aligns children (circle and paragraph) in a column */
+    align-items: center; /* Centers children horizontally in the container */
+    justify-content: center; /* Adjust this as needed, e.g., start, center, space-around */
+}

@@ -11,7 +11,7 @@ const QuestionsPage = () => {
     const [userLocation, setUserLocation] = useState("");  
     const [address, setAddress] = useState("");
     const [image_url, setImage_url] = useState("");
-
+    const [cost, setCost] = useState(0);
     const [name, setName] = useState("");
     const [unsavedName, setUnsavedName] = useState("");
     const [userName, setUserName] = useState("");
@@ -23,13 +23,16 @@ const QuestionsPage = () => {
 
     useEffect(() => {
         const fetchData = async () => {
+            console.log("cost: " + cost);
             try {
               const response = await fetch('http://localhost:5000/api/yelp', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ location: userLocation }),
+                body: JSON.stringify({ 
+                    location: userLocation,
+                    price:  cost}),
               });
               const data = await response.json();
               const randomNumber = Math.floor(Math.random() * 19) + 1; console.log(randomNumber);
@@ -45,7 +48,7 @@ const QuestionsPage = () => {
           };
         
         fetchData();
-    }, [userLocation]);
+    }, [cost]);
 
     return (
         <div className="pt-5">
@@ -83,7 +86,7 @@ const QuestionsPage = () => {
                 <Row>
                     <Col md="10" style={{ paddingRight: "0" }}>
                         <Form.Control size="lg"
-                            placeholder="Enter your name"
+                            placeholder="Enter your name" required
                             onChange={(e) => { setUnsavedName(e.target.value) }}
                         />
                     </Col>
@@ -133,7 +136,7 @@ const QuestionsPage = () => {
                 </Col>
 
                 <Col>
-                <Button variant="success" size="lg" className="mt-5" style={{backgroundColor: "#2f5d51", color: "white"}} onClick={() => {setOpenFitness(!openFitness); setQuestionNumber(3)}}>Fitness</Button>
+                    <Button variant="success" size="lg" className="mt-5" style={{backgroundColor: "#2f5d51", color: "white"}} onClick={() => {setOpenFitness(!openFitness); setQuestionNumber(3)}}>Fitness</Button>
                 </Col>
                 </Row>
                 {openFood ? 
@@ -188,23 +191,34 @@ const QuestionsPage = () => {
                     </Col>
                 </Row>
 
-                <div id="questions" className="text-center" style={{height: "100vh"}}>
-                    <Row style={{textAlign: "center"}}>
-                    <h3 className="mb-3">
-                        <span style={{backgroundColor: "#2F5D51", borderRadius: "500px", color: "white"}} className="p-3">Cost</span>
-                    </h3>
-                    <Col>
-                        <Button variant="success" size="lg" className="mt-5" style={{backgroundColor: "#2f5d51", color: "white"}} onClick={() => {setQuestionNumber(4)}}>OK</Button>
-                    </Col>
-
+                <div id="questions" style={{height: "100vh"}}>
+                    {openFood ?
+                    <Row className="mt-5">
+                        <Col>
+                            <h3 className="mb-3" style={{textAlign: "center"}}>
+                                Cost Preference
+                            </h3>   
+                        </Col>
+                        <Row style={{textAlign: "center"}}>
+                            <Col >
+                                <Button variant="success" size="lg" className="mt-5 p-3" style={{backgroundColor: "#2f5d51", color: "white"}} onClick={() => {setCost(1); setQuestionNumber(4)}}>$</Button>
+                            </Col>  
+                            <Col>
+                                <Button variant="success" size="lg" className="mt-5 p-3" style={{backgroundColor: "#2f5d51", color: "white"}} onClick={() => {setCost(2); setQuestionNumber(4)}}>$$</Button>
+                            </Col>
+                            <Col>
+                                <Button variant="success" size="lg" className="mt-5 p-3" style={{backgroundColor: "#2f5d51", color: "white"}} onClick={() => {setCost(3); setQuestionNumber(4)}}>$$$</Button>
+                            </Col>
+                        </Row>
                     </Row>
+                    : <Button onClick={() => {setQuestionNumber(4)}}>Next</Button>}
                 </div>
                 </>
                 : <></> 
             }
 
             {/* question 4 */}
-            {questionNumber === 4 && openFood == true ? 
+            {questionNumber === 4 && openFood == true  && name ? 
                 <>
                     <Row style={{textAlign: "center"}}>
                         <Col className="pink-bar"> 
@@ -253,7 +267,9 @@ const QuestionsPage = () => {
                         </Col>
                     </Row>
                 </>
-                : <></> 
+                : <>
+                    {"todo: show Recreation results"}
+                </> 
             }
 
         </div>
