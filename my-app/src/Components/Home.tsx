@@ -56,49 +56,12 @@ const Home = () => {
             <QuestionsPage /> :
             <></>}
 
-            <h1 className="pt-5" style={{textAlign: "center", color: "#2f5d51"}}>What category do you want to try something new in?</h1>
             <Row style={{textAlign: "center"}}>
-                <Col>
-                    <Button variant="success" size="lg" className="mt-5" style={{backgroundColor: "#2f5d51", color: "white"}} onClick={() => setOpenFood(!openFood)}>Food</Button>
-                    {openFood ? 
-                    <>
-                        <Form className="mt-5" onSubmit={(e) => { e.preventDefault(); }}>
-                            <Row>
-                                <Col md="8" style={{ paddingRight: "0" }}>
-                                    <Form.Control size="lg"
-                                        placeholder="Enter your location..."
-                                        onChange={(e) => { setUnsavedLocation(e.target.value) }}
-                                    />
-                                </Col>
-                                <Col md="4" style={{ paddingLeft: "0" }}>
-                                    <Button size="lg" variant="success" style={{backgroundColor: "#2f5d51", color: "white"}} type="submit" onClick={() => { setUserLocation(unsavedLocation) }}>Submit</Button>
-                                </Col>
-                            </Row>
-                        </Form>
-                    </>
-                    : <></>}
-                </Col>
                 <Col>
                     <Button  variant="success" style={{backgroundColor: "#2f5d51", color: "white"}} size="lg" className="mt-5">Recreation</Button>
                 </Col>
             </Row>
-            {name ? <>
-            
-            <Row className="mt-5">
-                <Col md={8}>
-                    <h3 className="mb-3">
-                        <span style={{backgroundColor: "#2F5D51", borderRadius: "500px", color: "white"}} className="p-2">{name}</span>
-                    </h3>
-                    <h3 className="mt-5">
-                        <span style={{backgroundColor: "#2F5D51", borderRadius: "500px", color: "white", minHeight: "20em"}} className="p-3">{address}</span>
-                    </h3>
-                </Col>
-                <Col xs={2} md={4}>
-                    <Image src={image_url} style={{ width: '18rem' }} alt="restaraunt img" rounded />
-                </Col>
-            </Row>
-            </>
-            : <></>}
+
         </>
     )
 }

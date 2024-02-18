@@ -14,6 +14,7 @@ const QuestionsPage = () => {
 
     const [name, setName] = useState("");
     const [unsavedName, setUnsavedName] = useState("");
+    const [userName, setUserName] = useState("");
     const [category, setCategory] = useState("");
     const [categoryPreferences, setCategoryPreferences] = useState("");
     const [recommendation, setRecommendation] = useState("");
@@ -78,16 +79,16 @@ const QuestionsPage = () => {
                 </Col>
             </Row>
             <div id="questions" className="text-center" style={{height: "100vh"}}>
-                <h3>Hello! What is your name?</h3>
+                <h3 className="mt-5">Hello! What is your name?</h3>
                 <Row>
                     <Col md="10" style={{ paddingRight: "0" }}>
                         <Form.Control size="lg"
-                            placeholder="Enter your location..."
+                            placeholder="Enter your name"
                             onChange={(e) => { setUnsavedName(e.target.value) }}
                         />
                     </Col>
                     <Col md="2" style={{ paddingLeft: "0" }}>
-                        <Button size="lg" variant="success" style={{backgroundColor: "#2f5d51", color: "white"}} type="submit" onClick={() => { setName(unsavedName); setQuestionNumber(2) }}>Submit</Button>
+                        <Button size="lg" variant="success" style={{backgroundColor: "#2f5d51", color: "white"}} type="submit" onClick={() => { setUserName(unsavedName); setQuestionNumber(2) }}>Submit</Button>
                     </Col>
                 </Row>
             </div>
@@ -232,7 +233,9 @@ const QuestionsPage = () => {
                         </Col>
                     </Row>
                     <Row className="mt-5">
+                    
                         <Col md={8}>
+                            <h4>{userName}, we recommend you check out...</h4>
                             <h3 className="mb-3">
                                 <span style={{backgroundColor: "#2F5D51", borderRadius: "500px", color: "white"}} className="p-2">{name}</span>
                             </h3>
