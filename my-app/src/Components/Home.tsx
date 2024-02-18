@@ -56,7 +56,7 @@ const Home = () => {
             <QuestionsPage /> :
             <></>}
 
-            <Row style={{textAlign: "center"}}>
+            <Row style={{textAlign: "center",}}>
                 <Col>
                     <Button  variant="success" style={{backgroundColor: "#2f5d51", color: "white"}} size="lg" className="mt-5">Recreation</Button>
                 </Col>
