@@ -268,7 +268,6 @@ const QuestionsPage = () => {
                     </Row>
                 </>
                 : <>
-                    {"todo: show Recreation results"}
                 </> 
             }
 
